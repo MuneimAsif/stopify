@@ -32,19 +32,19 @@ const navigate = useNavigate()
                         className="w-20 h-20 rounded-md -ms-5 sm:-ms-0 md:-ms-0 lg:-ms-0"
                       />
                       <div>
-                        <h1 className="w-[100px] sm:w-[200px] md:w-[300px] lg:w-[400px] -ms-7 sm:-ms-0 md:-ms-0 lg:-ms-0 line-clamp-2">{x.title}</h1>
-                        <p className="text-[#F59E0B] font-semibold text-lg -ms-7 sm:-ms-0 md:-ms-0 lg:-ms-0">
+                        <h1 className="w-[100px] sm:w-[200px] md:w-[300px] lg:w-[400px] -ms-4 sm:-ms-0 md:-ms-0 lg:-ms-0 line-clamp-2">{x.title}</h1>
+                        <p className="text-[#F59E0B] font-semibold text-lg -ms-4 sm:-ms-0 md:-ms-0 lg:-ms-0">
                           ${x.price}
                         </p>
                       </div>
                     </div>
-                    <div className="bg-[#F59E0B] text-white flex gap-3 p-2 rounded-md font-bold text-xl">
+                    <div className="bg-[#F59E0B] text-white flex gap-2 p-2 rounded-md font-bold text-xl">
                        <button onClick={()=>updateQuantity(cartItem, x.id, "decrease")} className="cursor-pointer">-</button>
                       <span>{x.quantity}</span>
                       <button onClick={()=>updateQuantity( cartItem, x.id, "increase")} className="cursor-pointer">+</button>
                     </div>
                     <span onClick={()=>deleteItem(x.id)} className="hover:bg-white/60 transition-all rounded-full p-3 hover:shadow-2xl">
-                      <FaRegTrashAlt className="text-[#F59E0B] text-2xl cursor-pointer" />
+                      <FaRegTrashAlt className="text-[#F59E0B] text-2xl cursor-pointer -me-2 sm:-me-0 md:-me-0 lg:-me-0" />
                     </span>
                   </div>
                 );
