@@ -1,6 +1,9 @@
+import { useState } from "react";
 
 const Contact = () => {
+  const navigate = useState()
   return (
+
     <div className="min-h-screen flex items-center justify-center px-4 py-10">
       <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-10 w-full max-w-5xl">
         <h2 className="text-4xl font-bold text-center mb-10">Get in Touch with <span className="text-[#F59E0B]">Stopify</span></h2>
@@ -33,7 +36,7 @@ const Contact = () => {
               <label className="block text-[#111827] mb-1">Your Message</label>
               <textarea rows="4" placeholder="Type your message..." className="w-full px-4 py-2 !text-gray-600 bg-white/20 border border-[#bcbbbbe9] rounded-xl placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
             </div>
-            <button type="submit" className="w-full bg-[#F59E0B] text-white font-semibold py-2 rounded-xl hover:opacity-90 transition-all duration-300">
+            <button onClick={()=>navigate("/contact")} type="submit" className="w-full bg-[#F59E0B] text-white font-semibold py-2 rounded-xl hover:opacity-90 transition-all duration-300">
               Send Message 🚀
             </button>
           </form>

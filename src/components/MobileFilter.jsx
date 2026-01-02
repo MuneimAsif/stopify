@@ -22,7 +22,7 @@ const MobileFilter = ({
       <div className="bg-gray-200 flex justify-between items-center md:hidden px-4 p-2 mt-5">
         <h1 className="font-semibold text-xl">Filters</h1>
         <FaFilter
-          onClick={() => setOpenMobFilter(true)}
+          onClick={() => openMobFilter == false ? setOpenMobFilter(true) : setOpenMobFilter(false)}
           className="text-gray-800"
         />
       </div>
@@ -88,6 +88,7 @@ const MobileFilter = ({
               setCategory("All");
               setBrand("All");
               setPriceRange([0, 5000]);
+              setOpenMobFilter(false)
             }}
           >
             Reset Filters

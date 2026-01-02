@@ -24,10 +24,10 @@ const Product = () => {
   const handleCatChange = (e) => {
     setCategory(e.target.value);
     setPage(1);
-    setOpenMobFilter(false)
   };
   const handleBrandChange = (e) => {
     setBrand(e.target.value);
+      setOpenMobFilter(false)
   };
   const pageHandler = (selectedPage) => {
     setPage(selectedPage);
@@ -75,7 +75,7 @@ const Product = () => {
               />
               {filteredData?.length > 0 ? (
                 <div className="flex flex-col justify-center items-center sm:mx-auto mx-auto">
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-6 sm:mt-10 md:mt-10 md:mb-auto">
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-4 mt-10 lg:mt-15 md:mb-auto">
                     {filteredData?.slice(page * 8 - 8, page * 8).map((x, i) => {
                       return <ProductCard key={i} product={x} />;
                     })}

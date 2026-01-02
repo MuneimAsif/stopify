@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
   return (
     <div
       onClick={() => navigate(`/products/${[product.id]}`)}
-      className="border relative border-gray-100 rounded-1xl cusror-pointer hover:scale-105 hover:shadow-2xl transition-all p-2 md:h-70 lg:h-80 lg:p-2 content-start"
+      className="flex flex-col justify-between border relative border-gray-100 rounded-1xl cusror-pointer hover:scale-105 hover:shadow-2xl transition-all p-2 md:h-70 lg:h-75 lg:p-2 lg:my-4"
     >
       <img
         src={product.thumbnail}
@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
         ${product.price}/=
       </p>
       <button
-        className=" bg-[#F59E0B] ld:px-3 py-2 md:text-sm lg:text-lg rounded-md text-white w-full cursor-pointer flex gap-2  items-center justify-center font-semibold"
+        className=" bg-[#F59E0B] lg:px-3 py-2 my-2 md:text-sm lg:text-lg rounded-md text-white w-full cursor-pointer flex gap-2  items-center justify-center font-semibold"
         onClick={(e) => {
           e.stopPropagation();
           addToCart(product);
@@ -38,7 +38,7 @@ const ProductCard = ({ product }) => {
       >
         <IoCartOutline className="w-6 h-6 text-sm" /> Add To Cart
       </button>
-    </div>
+      </div>
   );
 };
 
