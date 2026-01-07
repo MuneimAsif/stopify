@@ -6,7 +6,7 @@ import Loading from "../assets/Loading.webm";
 import ProductCard from "../components/ProductCard";
 import Pagination from "../components/Pagination";
 import Lottie from "lottie-react";
-import notfound from "../assets/notfound.json";
+import notFound from "../assets/notFound.json"
 import MobileFilter from "../components/MobileFilter";
 
 const Product = () => {
@@ -17,6 +17,7 @@ const Product = () => {
   const [priceRange, setPriceRange] = useState([0, 5000]);
   const [page, setPage] = useState(1);
   const [openMobFilter, setOpenMobFilter] = useState(false);
+
   useEffect(() => {
     fetchAllProducts();
     window.scrollTo(0, 0);
@@ -88,8 +89,8 @@ const Product = () => {
                 </div>
               ) : (
                 <div className="flex justify-center items-center md:h-[600px] md:w-[900px] mt-10 md:ms-[5%] mx-auto">
-                  <Lottie animationData={notfound} classID="w-[500px]" style={{ filter: 'hue-rotate(12deg) brightness(1.5)' }} />
-                </div>
+                  <Lottie animationData={notFound} classID="w-[500px]" style={{ filter: 'hue-rotate(1deg) brightness(2)' }} />
+                </div>  
               )}
             </div>
           </>
@@ -99,7 +100,7 @@ const Product = () => {
               <source src={Loading} />
             </video>
           </div>
-        )}
+        )}  
       </div>
     </div>
   );
