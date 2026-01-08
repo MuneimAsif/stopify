@@ -1,4 +1,3 @@
-
 const Pagination = ({page,pageHandler,dynamicPage}) => {
     const getPages = (current,total)=>{
     const pages = [ ]

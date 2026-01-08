@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { getData } from "../context/DataContext";
 import FilterSection from "../components/FilterSection";
@@ -6,7 +5,7 @@ import Loading from "../assets/Loading.webm";
 import ProductCard from "../components/ProductCard";
 import Pagination from "../components/Pagination";
 import Lottie from "lottie-react";
-import notFound from "../assets/notFound.json"
+import notFound from "../assets/notFound.json";
 import MobileFilter from "../components/MobileFilter";
 
 const Product = () => {
@@ -22,13 +21,20 @@ const Product = () => {
     fetchAllProducts();
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    setPage(1);
+  }, [search, category, brand, priceRange]);
+  
   const handleCatChange = (e) => {
     setCategory(e.target.value);
-    setPage(1);
+    // setPage(1);
   };
+  
   const handleBrandChange = (e) => {
     setBrand(e.target.value);
-      setOpenMobFilter(false)
+    setOpenMobFilter(false);
+    // setPage(1);
   };
   const pageHandler = (selectedPage) => {
     setPage(selectedPage);
@@ -42,6 +48,7 @@ const Product = () => {
       x.price <= priceRange[1]
   );
   const dynamicPage = Math.ceil(filteredData?.length / 8);
+  // const startIndex = page*8-8
   return (
     <div>
       <div className="max-w-6xl mx-auto px-4 mb-10">
@@ -89,8 +96,12 @@ const Product = () => {
                 </div>
               ) : (
                 <div className="flex justify-center items-center md:h-[600px] md:w-[900px] mt-10 md:ms-[5%] mx-auto">
-                  <Lottie animationData={notFound} classID="w-[500px]" style={{ filter: 'hue-rotate(1deg) brightness(2)' }} />
-                </div>  
+                  <Lottie
+                    animationData={notFound}
+                    classID="w-[500px]"
+                    style={{ filter: "hue-rotate(1deg) brightness(2)" }}
+                  />
+                </div>
               )}
             </div>
           </>
@@ -100,7 +111,7 @@ const Product = () => {
               <source src={Loading} />
             </video>
           </div>
-        )}  
+        )}
       </div>
     </div>
   );
